@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimaryDark">@color/index_colorPrimaryDark</item>
+        <item name="colorPrimary">@color/index_colorPrimary</item>
+        <item name="android:textColorPrimary">@color/index_actionbar_title</item>
+        <item name="android:homeAsUpIndicator">@drawable/top_back</item>
+    </style>
+
+
+
+</resources>
