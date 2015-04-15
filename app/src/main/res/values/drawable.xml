@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="DayColor">#FFFFFF</drawable>
+    <drawable name="NightColor">#4C4C4C</drawable>
+
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="TextColor" format="reference"/>
+    <attr name="BackgroundColor" format="reference"/>
+    <attr name="LineColor" format="reference"/>
+    <attr name="ActionbarColor" format="reference"/>
+
+</resources>

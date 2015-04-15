@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.APP"/>
+    <!--主题基类-->
+    <style name="Theme.APP" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/index_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/index_colorPrimaryDark</item>
+        <item name="actionBarStyle">@style/ActionBar.APP</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="actionMenuTextAppearance">@style/ActionMenuTextAppearance</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+     <style name="Theme.APP.article" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/article_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/article_colorPrimaryDark</item>
+        <item name="actionBarStyle">@style/ActionBar.APP</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="actionMenuTextAppearance">@style/ActionMenuTextAppearance</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!--透明actionbar-->
+    <style name="Theme.App.ActionBarTransparent" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="actionBarStyle">@style/ActionBar.Transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@color/index_colorPrimaryDark</item>
+    </style>
+    <!--主activity的样式-->
+    <style name="Theme.APP.Main" parent="Theme.APP">
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+    <style name="ActionBar.Transparent" parent="ActionBar.APP">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="ActionBar.APP" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="displayOptions">showHome|homeAsUp|showTitle</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="ActionMenuTextAppearance" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+
+</resources>

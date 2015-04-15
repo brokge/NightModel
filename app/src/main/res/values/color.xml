@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 按照模块 -->
+    <!--首页模块-->
+    <color name="index_colorPrimaryDark">#1F8B4D</color>
+    <color name="index_colorPrimary">#ff086494</color>
+    <color name="index_history_bg">#f3f3f3</color>
+    <color name="menu_text_color">#222222</color>
+    <color name="navigaton_drawer_bg">#ffffff</color>
+    <color name="navigaton_drawer_divider">#e0e0e0</color>
+    <color name="selected_bg_color">#f2f2f2</color>
+
+    <color name="menu_text_index_selected_color">#037B94</color>
+    <color name="menu_text_wiki_selected_color">#ff1a420e</color>
+    <color name="menu_text_family_selected_color">#707229</color>
+
+    <color name="article_colorPrimaryDark">#ff1a420e</color>
+    <color name="article_colorPrimary">#34420F</color>
+
+    <color name="chanel_colorPrimaryDark">#707229</color>
+    <color name="chanel_colorPrimary">#ff657224</color>
+
+    <color name="index_actionbar_title">#ff657224</color>
+
+
+
+
+</resources>

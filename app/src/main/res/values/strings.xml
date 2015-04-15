@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 分某块 -->
+    <string name="app_name">约定</string>
+    <string name="click_again_to_exit">再按一次退出应用</string>
+
+    <!-- index tabbar -->
+    <string name="main_menu_home_title">首页</string>
+    <string name="main_menu_two">栏目</string>
+    <string name="main_menu_thre">频道</string>
+    <string name="more">更多</string>
+    <string name="main_menu_feedback_title">用户反馈</string>
+    <string name="main_menu_recommend_title">应用推荐</string>
+    <string name="main_menu_about_title">关于我们</string>
+
+    <string name="main_menu_setting_title">设置</string>
+    <string name="main_menu_usermanual_title">使用帮助</string>
+    <string name="more_login">账号登录</string>
+
+    <string name="menu_update">检查更新</string>
+    <string name="navigation_drawer_open">左侧菜单打开</string>
+    <string name="navigation_drawer_close">左侧菜单关闭</string>
+    <!-- 首页 -->
+</resources>

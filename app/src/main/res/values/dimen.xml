@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_padding_left">20dp</dimen>
+    <dimen name="margin_home_title">10dp</dimen>
+    <dimen name="padding_main_icon_left">32dp</dimen>
+    <dimen name="margin_list_item_text">6dp</dimen>
+</resources>

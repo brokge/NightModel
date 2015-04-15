@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/navigaton_drawer_bg"
+            tools:context="cn.dxy.android.aspirin.ui.fragment.NavigationDrawerFragment"
+            android:orientation="vertical"
+        >
+    <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            >
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="cn.dxy.android.aspirin.ui.fragment.NavigationDrawerFragment">
+        <RelativeLayout
+                android:id="@+id/home_drawer_login_layout"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/user_bg"
+                android:paddingLeft="@dimen/menu_padding_left"
+                android:paddingRight="0dp"
+                android:orientation="vertical">
+        </RelativeLayout>
+        <View android:layout_width="match_parent" android:layout_height="10dp"
+              android:background="@color/navigaton_drawer_bg"/>
+        <LinearLayout
+                android:id="@+id/main_menu_home"
+                android:layout_width="fill_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/menu_padding_left"
+                android:paddingRight="0dp"
+                android:background="@drawable/main_menu_selector">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/drawer_home"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_main_icon_left"
+                    android:paddingRight="0dp"
+                    android:textColor="@drawable/main_menu_text_selector"
+                    android:text="@string/main_menu_home_title"
+                    android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/main_menu_health_article"
+                android:layout_width="fill_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/menu_padding_left"
+                android:paddingRight="0dp"
+                android:background="@drawable/main_menu_selector">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/drawer_wiki"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="0dp"
+                    android:paddingLeft="@dimen/padding_main_icon_left"
+                    android:textColor="@drawable/main_menu_wiki_text_selector"
+                    android:text="@string/main_menu_two"
+                    android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/main_menu_family_health"
+                android:layout_width="fill_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/menu_padding_left"
+                android:paddingRight="0dp"
+                android:background="@drawable/main_menu_selector">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/drawer_family"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_main_icon_left"
+                    android:paddingRight="0dp"
+                    android:textColor="@drawable/main_menu_family_text_selector"
+                    android:text="@string/main_menu_thre"
+                    android:textSize="16sp"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.667dp"
+                android:background="@color/navigaton_drawer_divider"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                />
+
+        <TextView
+                android:id="@+id/main_menu_feedback"
+                style="@style/main_drawer_first_item_style"
+                android:text="@string/main_menu_feedback_title"/>
+        <TextView
+                android:id="@+id/main_menu_recommend"
+                style="@style/main_drawer_first_item_style"
+                android:text="@string/main_menu_recommend_title"/>
+        <TextView
+                android:id="@+id/main_menu_about"
+                style="@style/main_drawer_first_item_style"
+                android:text="@string/main_menu_about_title"/>
+
+    </LinearLayout>
+    </ScrollView>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.667dp"
+            android:background="@color/navigaton_drawer_divider"
+            android:layout_marginTop="6dp"
+            />
+    <!--底部栏-->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            >
+        <LinearLayout
+                android:id="@+id/main_menu_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/menu_padding_left"
+                android:paddingRight="0dp"
+                android:background="@drawable/main_menu_selector">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/drawer_set"/>
+            <TextView
+                    style="@style/main_drawer_bottom_item_style"
+                    android:text="@string/main_menu_setting_title"/>
+        </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>
