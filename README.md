@@ -2,7 +2,7 @@
 夜间模式
 ## 效果图 
 图一（白天模式）
-![](https://github.com/brokge/NightModel/blob/master/screenshot/day.png)
+![](https://github.com/brokge/NightModel/blob/master/screenshot/day.png =540x960)
 
 图二
 ![](https://github.com/brokge/NightModel/blob/master/screenshot/night.png)
