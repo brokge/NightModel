@@ -5,15 +5,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import com.example.nightmodel.R;
+import com.example.nightmodel.app.NightModelApplication;
 
 
 public abstract class BaseFragment extends Fragment {
 
     protected Activity mActivity;
+    protected View mView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -1,158 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/navigaton_drawer_bg"
-            tools:context="cn.dxy.android.aspirin.ui.fragment.NavigationDrawerFragment"
-            android:orientation="vertical"
-        >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navigaton_drawer_bg"
+    android:orientation="vertical"
+    tools:context="cn.dxy.android.aspirin.ui.fragment.NavigationDrawerFragment">
+
     <ScrollView
-            android:id="@+id/scroll_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scrollbars="none"
-            >
-    <LinearLayout
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:scrollbars="none">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:orientation="vertical"
             tools:context="cn.dxy.android.aspirin.ui.fragment.NavigationDrawerFragment">
-        <RelativeLayout
+
+            <RelativeLayout
                 android:id="@+id/home_drawer_login_layout"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@drawable/user_bg"
+                android:orientation="vertical"
                 android:paddingLeft="@dimen/menu_padding_left"
-                android:paddingRight="0dp"
-                android:orientation="vertical">
-        </RelativeLayout>
-        <View android:layout_width="match_parent" android:layout_height="10dp"
-              android:background="@color/navigaton_drawer_bg"/>
-        <LinearLayout
+                android:paddingRight="0dp"></RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@android:color/transparent" />
+
+            <LinearLayout
                 android:id="@+id/main_menu_home"
                 android:layout_width="fill_parent"
                 android:layout_height="56dp"
+                android:background="@drawable/main_menu_selector"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/menu_padding_left"
-                android:paddingRight="0dp"
-                android:background="@drawable/main_menu_selector">
+                android:paddingRight="0dp">
 
-            <ImageView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/drawer_home"/>
+                    android:src="@drawable/drawer_home" />
 
-            <TextView
+                <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_main_icon_left"
                     android:paddingRight="0dp"
-                    android:textColor="@drawable/main_menu_text_selector"
                     android:text="@string/main_menu_home_title"
-                    android:textSize="16sp"/>
-        </LinearLayout>
+                    android:textColor="@drawable/main_menu_text_selector"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
                 android:id="@+id/main_menu_health_article"
                 android:layout_width="fill_parent"
                 android:layout_height="56dp"
+                android:background="@drawable/main_menu_selector"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/menu_padding_left"
-                android:paddingRight="0dp"
-                android:background="@drawable/main_menu_selector">
+                android:paddingRight="0dp">
 
-            <ImageView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/drawer_wiki"/>
+                    android:src="@drawable/drawer_wiki" />
 
-            <TextView
+                <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="0dp"
                     android:paddingLeft="@dimen/padding_main_icon_left"
-                    android:textColor="@drawable/main_menu_wiki_text_selector"
+                    android:paddingRight="0dp"
                     android:text="@string/main_menu_two"
-                    android:textSize="16sp"/>
-        </LinearLayout>
+                    android:textColor="@drawable/main_menu_wiki_text_selector"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
                 android:id="@+id/main_menu_family_health"
                 android:layout_width="fill_parent"
                 android:layout_height="56dp"
+                android:background="@drawable/main_menu_selector"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/menu_padding_left"
-                android:paddingRight="0dp"
-                android:background="@drawable/main_menu_selector">
+                android:paddingRight="0dp">
 
-            <ImageView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/drawer_family"/>
+                    android:src="@drawable/drawer_family" />
 
-            <TextView
+                <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_main_icon_left"
                     android:paddingRight="0dp"
-                    android:textColor="@drawable/main_menu_family_text_selector"
                     android:text="@string/main_menu_thre"
-                    android:textSize="16sp"/>
-        </LinearLayout>
+                    android:textColor="@drawable/main_menu_family_text_selector"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
-        <View
+            <View
+                android:tag="line"
                 android:layout_width="match_parent"
                 android:layout_height="0.667dp"
-                android:background="@color/navigaton_drawer_divider"
-                android:layout_marginTop="6dp"
                 android:layout_marginBottom="4dp"
-                />
+                android:layout_marginTop="6dp"
+                android:background="@color/navigaton_drawer_divider" />
 
-        <TextView
+            <TextView
                 android:id="@+id/main_menu_feedback"
                 style="@style/main_drawer_first_item_style"
-                android:text="@string/main_menu_feedback_title"/>
-        <TextView
+                android:text="@string/main_menu_feedback_title" />
+
+            <TextView
                 android:id="@+id/main_menu_recommend"
                 style="@style/main_drawer_first_item_style"
-                android:text="@string/main_menu_recommend_title"/>
-        <TextView
+                android:text="@string/main_menu_recommend_title" />
+
+            <TextView
                 android:id="@+id/main_menu_about"
                 style="@style/main_drawer_first_item_style"
-                android:text="@string/main_menu_about_title"/>
+                android:text="@string/main_menu_about_title" />
 
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
+
     <View
-            android:layout_width="match_parent"
-            android:layout_height="0.667dp"
-            android:background="@color/navigaton_drawer_divider"
-            android:layout_marginTop="6dp"
-            />
+        android:tag="line"
+        android:layout_width="match_parent"
+        android:layout_height="0.667dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/navigaton_drawer_divider" />
     <!--底部栏-->
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="bottom"
-            >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
         <LinearLayout
-                android:id="@+id/main_menu_setting"
-                android:layout_width="fill_parent"
-                android:layout_height="56dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/menu_padding_left"
-                android:paddingRight="0dp"
-                android:background="@drawable/main_menu_selector">
+            android:id="@+id/main_menu_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/main_menu_selector"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/menu_padding_left"
+            android:paddingRight="0dp">
 
             <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/drawer_set"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/drawer_set" />
+
             <TextView
-                    style="@style/main_drawer_bottom_item_style"
-                    android:text="@string/main_menu_setting_title"/>
+                style="@style/main_drawer_bottom_item_style"
+                android:text="@string/main_menu_setting_title" />
         </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
 </LinearLayout>

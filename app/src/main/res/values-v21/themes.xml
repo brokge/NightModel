@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="AppTheme.Base"/>
 
@@ -11,6 +11,7 @@
         <item name="android:textColorPrimary">@color/index_actionbar_title</item>
         <item name="android:homeAsUpIndicator">@drawable/top_back</item>
     </style>
+
 
 
 

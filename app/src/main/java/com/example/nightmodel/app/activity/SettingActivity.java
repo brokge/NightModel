@@ -24,26 +24,26 @@ import java.util.List;
  * Created by admin on 2015/3/18.
  */
 public class SettingActivity extends BaseActivity {
-    private  View mView;
+    private View mView;
     private Switch nightSwitch;
     private List<TextView> allTextViewList;
     private ActionBar mActionbar;
-    private boolean isNight=false;
+    private boolean isNight = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(NightModelApplication.appConfig.getNightModeSwitch()){
+        if (NightModelApplication.appConfig.getNightModeSwitch()) {
             this.setTheme(R.style.Theme_setting_night);
-            isNight=true;
-        }
-        else {
+            isNight = true;
+        } else {
             this.setTheme(R.style.Theme_setting_day);
-            isNight=false;
+            isNight = false;
         }
         setContentView(R.layout.setting);
-       // mView =this.getWindow().getDecorView();
-        mView =findViewById(R.id.setting_root);
-        nightSwitch=(Switch)this.findViewById(R.id.night_switch);
+        // mView =this.getWindow().getDecorView();
+        mView = findViewById(R.id.setting_root);
+        nightSwitch = (Switch) this.findViewById(R.id.night_switch);
         nightSwitch.setChecked(isNight);
         nightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -52,12 +52,14 @@ public class SettingActivity extends BaseActivity {
                 changeSkinMode(isChecked);
             }
         });
-        mActionbar=getSupportActionBar();
+        mActionbar = getSupportActionBar();
         initActionbar(isNight);
     }
-    private void initActionbar(boolean isNight){
+
+    private void initActionbar(boolean isNight) {
         changeActionbarSkinMode(isNight);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -70,43 +72,50 @@ public class SettingActivity extends BaseActivity {
     }
 
     @SuppressLint("NewApi")
-    private  void changeSkinMode(boolean isNight){
+    private void changeSkinMode(boolean isNight) {
         changeActionbarSkinMode(isNight);
-        allTextViewList= ViewUtil.getAllTextView(ViewUtil.getAllChildView(mView));
-        List<View> lineViewList=new ArrayList<View>();
-        lineViewList= ViewUtil.getViewList(mView);
-        int textColor=0;
-        int weightLineColor=0;
+        changeMainActivity(isNight);
+        allTextViewList = ViewUtil.getAllTextView(ViewUtil.getAllChildView(mView));
+        List<View> lineViewList = new ArrayList<View>();
+        lineViewList = ViewUtil.getViewList(mView);
+        int textColor = 0;
+        int weightLineColor = 0;
         if (isNight) {
             mView.setBackgroundColor(getResources().getColor(R.color.bg_night));
-            weightLineColor=R.color.line_night;
-            textColor=getResources().getColor(R.color.text_night);
+            weightLineColor = R.color.line_night;
+            textColor = getResources().getColor(R.color.text_night);
         } else {
             mView.setBackgroundColor(getResources().getColor(R.color.bg_day));
-            weightLineColor=R.color.line_day;
-            textColor=getResources().getColor(R.color.text_day);
+            weightLineColor = R.color.line_day;
+            textColor = getResources().getColor(R.color.text_day);
         }
-        if (allTextViewList != null&&textColor!=0) {
+        if (allTextViewList != null && textColor != 0) {
             for (TextView textView : allTextViewList) {
                 textView.setTextColor(textColor);
             }
         }
-        for (View view:lineViewList){
-            if(view.getTag()!=null&&view.getTag().equals("weight_line")){
+        for (View view : lineViewList) {
+            if (view.getTag() != null && view.getTag().equals("weight_line")) {
                 view.setBackground(getResources().getDrawable(weightLineColor));
-            }else {
+            } else {
                 view.setBackground(getResources().getDrawable(weightLineColor));
             }
         }
     }
-    public void changeActionbarSkinMode(boolean isNight){
-        int actionbarColor=0;
-        if(isNight) {
-            actionbarColor=R.color.actionbar_night;
-        }else{
-            actionbarColor=R.color.actionbar_day;
+
+    public void changeActionbarSkinMode(boolean isNight) {
+        int actionbarColor = 0;
+        if (isNight) {
+            actionbarColor = R.color.actionbar_night;
+        } else {
+            actionbarColor = R.color.actionbar_day;
         }
-        setBackgroundAlpha(mActionbar,getResources().getColor(actionbarColor));
+        setBackgroundAlpha(mActionbar, getResources().getColor(actionbarColor));
     }
+
+    private void changeMainActivity(boolean isNight) {
+        MainActivity.mMainActivity.changeSkinMode(isNight);
+    }
+
 
 }

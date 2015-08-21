@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     public static List<View> mNavDrawerItemViews = new ArrayList<View>();
     public static List<Integer> mNavDrawerItemIds = new ArrayList<Integer>();
     private SystemBarConfig mConfig;
+    public static MainActivity mMainActivity;
 
     @Override
     protected void onActivityResult(int arg0, int arg1, Intent arg2) {
@@ -56,6 +57,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mMainActivity = this;
         setContentView(R.layout.aspirin_main);
         moveDrawerToTop();
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -103,14 +105,16 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         getMenuInflater().inflate(R.menu.menu_index, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId=item.getItemId();
-        switch (itemId){
+        int itemId = item.getItemId();
+        switch (itemId) {
             case R.id.action_night:
-                Toast.makeText(thisActivity,"夜间模式",Toast.LENGTH_SHORT).show();
-                boolean isNightMode= NightModelApplication.appConfig.getNightModeSwitch();
-                changeSkinMode(isNightMode);
+                Toast.makeText(thisActivity, "夜间模式", Toast.LENGTH_SHORT).show();
+                boolean isNightMode = NightModelApplication.appConfig.getNightModeSwitch();
+                NightModelApplication.appConfig.setNightModeSwitch(!isNightMode);
+                changeSkinMode(!isNightMode);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -278,9 +282,17 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         }
     }
 
-    private void changeSkinMode(boolean isNight){
-        NightModelApplication.appConfig.setNightModeSwitch(!isNight);
-
-
+    public void changeSkinMode(boolean isNight) {
+        changeActionbarSkinMode(mActionBar, isNight);
+        changeFragmentMode(isNight);
     }
+
+    public void changeFragmentMode(boolean isNight) {
+        if (mCurrentFragment instanceof IndexFragment) {
+            ((IndexFragment) mCurrentFragment).changeThemeModel(isNight);
+        }
+        mNavigationDrawerFragment.changeSkinMode(isNight);
+    }
+
+
 }

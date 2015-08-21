@@ -145,6 +145,9 @@ public class MaterialViewPager extends FrameLayout {
     public Toolbar getToolbar() {
         return mToolbar;
     }
+    public void setToolbar(Toolbar toolbar) {
+         mToolbar=toolbar;
+    }
 
     public void setImageUrl(String imageUrl, int fadeDuration) {
         if (imageUrl != null) {

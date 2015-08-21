@@ -5,11 +5,19 @@
     <color name="line_day">#ff0099cc</color>
     <color name="line_night">#144275</color>
 
-    <color name="text_day">#000000</color>
+    <color name="single_line_night">#666666</color>
+    <color name="single_line_day">#e0e0e0</color>
+
+    <color name="text_day">#88000000</color>
     <color name="text_night">#ffffffff</color>
 
     <color name="actionbar_day">#ff086494</color>
     <color name="actionbar_night">#2A2A2A</color>
 
+
+    <!--首页Menu-->
+    <color name="menu_text_color_night">#ffffff</color>
+    <color name="navigaton_drawer_bg_night">#2A2A2A</color>
+    <color name="selected_bg_color_night">#000000</color>
 
 </resources>

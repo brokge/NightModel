@@ -5,5 +5,5 @@
     <item android:id="@+id/action_night"
         android:orderInCategory="1"
         android:title="夜间模式"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 </menu>

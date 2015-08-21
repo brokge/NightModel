@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.widget.Toast;
 
 
+import com.example.nightmodel.R;
 import com.example.nightmodel.app.util.SystemBarConfig;
 
 /**
@@ -60,6 +61,19 @@ public class BaseActivity extends ActionBarActivity {
             }
         }
         return super.dispatchKeyEvent(event);
+    }
+    /**
+     * 改变actionbar颜色
+     * @param isNight
+     */
+    public void changeActionbarSkinMode(ActionBar mActionbar,boolean isNight){
+        int actionbarColor=0;
+        if(isNight) {
+            actionbarColor= R.color.actionbar_night;
+        }else{
+            actionbarColor=R.color.actionbar_day;
+        }
+        setBackgroundAlpha(mActionbar, getResources().getColor(actionbarColor));
     }
     public void setBackgroundAlpha(ActionBar view, int baseColor) {
         int rgb = baseColor;

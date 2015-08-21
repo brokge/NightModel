@@ -13,6 +13,11 @@ import android.widget.*;
 
 import com.example.nightmodel.R;
 import com.example.nightmodel.app.activity.MainActivity;
+import com.example.nightmodel.app.util.ViewUtil;
+
+import java.io.BufferedOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -43,6 +48,9 @@ public class NavigationDrawerFragment extends Fragment {
 
     private RelativeLayout loginLayout;
     private LinearLayout logoutLayout;
+    private View mView;
+
+    private View homeView, articleView, familyView, feedBackView, recommendView, aboutView, settingView;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -59,41 +67,42 @@ public class NavigationDrawerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-        mScrollView=(ScrollView)view.findViewById(R.id.scroll_view);
+        mView = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        mScrollView = (ScrollView) mView.findViewById(R.id.scroll_view);
 
-        loginLayout = (RelativeLayout) view.findViewById(R.id.home_drawer_login_layout);
+        loginLayout = (RelativeLayout) mView.findViewById(R.id.home_drawer_login_layout);
        /* logoutLayout = (LinearLayout) view.findViewById(R.id.home_drawer_logout_layout);*/
        /* userNameView = (TextView) view.findViewById(R.id.home_drawer_user_name);*/
         loginLayout.setOnClickListener(onClickListener);
 
-        View homeView = view.findViewById(R.id.main_menu_home);
+        homeView = mView.findViewById(R.id.main_menu_home);
         homeView.setOnClickListener(onClickListener);
         MainActivity.mNavDrawerItemViews.add(homeView);
         MainActivity.mNavDrawerItemIds.add(R.id.main_menu_home);
 
-        View articleView = view.findViewById(R.id.main_menu_health_article);
+        articleView = mView.findViewById(R.id.main_menu_health_article);
         articleView.setOnClickListener(onClickListener);
         MainActivity.mNavDrawerItemViews.add(articleView);
         MainActivity.mNavDrawerItemIds.add(R.id.main_menu_health_article);
 
-        View familyView = view.findViewById(R.id.main_menu_family_health);
+        familyView = mView.findViewById(R.id.main_menu_family_health);
         familyView.setOnClickListener(onClickListener);
         MainActivity.mNavDrawerItemViews.add(familyView);
         MainActivity.mNavDrawerItemIds.add(R.id.main_menu_family_health);
 
-        View feedBackView = view.findViewById(R.id.main_menu_feedback);
+        feedBackView = mView.findViewById(R.id.main_menu_feedback);
         feedBackView.setOnClickListener(onClickListener);
 
-        View recommendView = view.findViewById(R.id.main_menu_recommend);
+        recommendView = mView.findViewById(R.id.main_menu_recommend);
         recommendView.setOnClickListener(onClickListener);
 
-        View aboutView = view.findViewById(R.id.main_menu_about);
+        aboutView = mView.findViewById(R.id.main_menu_about);
         aboutView.setOnClickListener(onClickListener);
 
-        view.findViewById(R.id.main_menu_setting).setOnClickListener(onClickListener);
+        settingView = mView.findViewById(R.id.main_menu_setting);
+        settingView.setOnClickListener(onClickListener);
 
-        return view;
+        return mView;
     }
 
     @Override
@@ -101,6 +110,7 @@ public class NavigationDrawerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         selectItem(view.findViewById(R.id.main_menu_home), R.id.main_menu_home);
     }
+
     private View.OnClickListener onClickListener = new View.OnClickListener() {
 
         @Override
@@ -226,6 +236,55 @@ public class NavigationDrawerFragment extends Fragment {
         void onNavigationDrawerItemSelected(View v, int position);
     }
 
+    public void changeSkinMode(boolean isNight) {
+        changeTextColor(isNight);
+        // homeView,articleView,familyView,feedBackView,recommendView,aboutView;
+        if (isNight) {
+            mView.setBackgroundColor(getResources().getColor(R.color.navigaton_drawer_bg_night));
+            homeView.setBackgroundResource(R.drawable.main_menu_selector_night);
+            articleView.setBackgroundResource(R.drawable.main_menu_selector_night);
+            familyView.setBackgroundResource(R.drawable.main_menu_selector_night);
+            feedBackView.setBackgroundResource(R.drawable.main_menu_selector_night);
+            recommendView.setBackgroundResource(R.drawable.main_menu_selector_night);
+            aboutView.setBackgroundResource(R.drawable.main_menu_selector_night);
+            settingView.setBackgroundResource(R.drawable.main_menu_selector_night);
+        } else {
+            mView.setBackgroundResource(R.color.navigaton_drawer_bg);
+            homeView.setBackgroundResource(R.drawable.main_menu_selector);
+            articleView.setBackgroundResource(R.drawable.main_menu_selector);
+            familyView.setBackgroundResource(R.drawable.main_menu_selector);
+            feedBackView.setBackgroundResource(R.drawable.main_menu_selector);
+            recommendView.setBackgroundResource(R.drawable.main_menu_selector);
+            aboutView.setBackgroundResource(R.drawable.main_menu_selector);
+            settingView.setBackgroundResource(R.drawable.main_menu_selector);
+        }
+    }
 
+    public void changeTextColor(boolean isNight) {
+        List<TextView> allTextViewList = ViewUtil.getAllTextView(ViewUtil.getAllChildView(mView));
+        List<View> lineViewList = new ArrayList<View>();
+        lineViewList = ViewUtil.getViewList(mView);
+        int textColor = 0;
+        int singleLineColor = 0;
+        if (isNight) {
+            mView.setBackgroundColor(getResources().getColor(R.color.bg_night));
+            textColor = getResources().getColor(R.color.text_night);
+            singleLineColor = R.color.single_line_night;
+        } else {
+            mView.setBackgroundColor(getResources().getColor(R.color.bg_day));
+            textColor = getResources().getColor(R.color.text_day);
+            singleLineColor = R.color.single_line_day;
+        }
+        if (allTextViewList != null && textColor != 0) {
+            for (TextView textView : allTextViewList) {
+                textView.setTextColor(textColor);
+            }
+        }
+        for (View view : lineViewList) {
+            if (view.getTag() != null && view.getTag().equals("line")) {
+                view.setBackgroundColor(getResources().getColor(singleLineColor));
+            }
+        }
+    }
 }
 
